@@ -9,6 +9,28 @@ public class Task {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
+    private String description;
+    private double time;
+
+    @ManyToOne
+    private Employee employee;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getTime() {
+        return time;
+    }
+
+    public void setTime(double time) {
+        this.time = time;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -25,28 +47,6 @@ public class Task {
         this.employee = employee;
     }
 
-    private String description;
-    private double time;
-
-    @OneToOne
-    private Employee employee;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
 }
 
 

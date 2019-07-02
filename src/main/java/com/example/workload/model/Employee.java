@@ -1,9 +1,8 @@
 package com.example.workload.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -18,6 +17,8 @@ public class Employee {
     private String role;
     private int capacity;
 
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    private List<Task> tasks = new ArrayList<>();
 
     public String getName() {
         return name;
