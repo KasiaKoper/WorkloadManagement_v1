@@ -2,47 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-
-    <!--
-    dorzucenie Bootstrapa
-    -->
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <title>Title</title>
 </head>
 
 <body>
 
-<!--
-wszytskie tutaj użyte komentarze pochodzą z Bootstrapa
--->
-
 <div class="table-responsive">
     <table class="table table-striped">
         <tr>
             <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Show</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Role</th>
+            <th scope="col">Capacity</th>
         </tr>
 
-        <!--
-        pętle forech w Thymeleafie
-        --->
-
-        <tr scope="col" th:each ="user : ${users}">
-            <td th:text="${user.name}">...</td>
-            <td th:text="${user.email}">...</td>
-            <td> <a th:href="${user.url()}">Show</a></td>
+        <tr scope="col" th:each ="employee : ${employees}">
+            <td th:text="${employee.name}">...</td>
+            <td th:text="${employee.surname}">...</td>
+            <td th:text="${employee.role}">...</td>
+            <td th:text="${employee.capacity}">...</td>
+            <td> <a th:href="${employee.url()}">Show</a></td>
         </tr>
     </table>
 </div>
 
-<!--
-użyte 2 klasy z Bootstrapa btn tbn-primary
---->
-
-<a href="/" class="btn btn-primary">Dodaj użytkownika</a>
+<a href="/" class="btn btn-primary">New employee</a>
 
 </body>
 </html>

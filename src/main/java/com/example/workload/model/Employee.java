@@ -1,4 +1,4 @@
-package com.example.workload;
+package com.example.workload.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
